@@ -1,19 +1,20 @@
 ---
 
-let buttonText = Astro.props;
+const buttonText = Astro.props;
 
 ---
 
 
-<button type="button" class="button"> {buttonText} </button>
+<button type="button" class="button"> <slot /> </button>
 
 <style>
 .button {
-	background-color: #440b70;
+	background-color: rgba(68, 11, 112, 0.8);
 	color: #FFFFFF;
-	padding: 0.5rem 1rem;
+	padding: 0.6rem 2rem;
 	font-size: 1rem;
-	border-radius: 6px;
-}
+	border-radius: 10px;
+	margin: 0 0.8rem;
+	border: none;
 }
 </style>

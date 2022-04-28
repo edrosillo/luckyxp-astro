@@ -1,0 +1,60 @@
+---
+let currentYear= new Date().getFullYear(); 
+---
+
+<footer>
+    <div class="footer-content">
+        <p class="copyright">Copyright &copy; {currentYear} Lucky XP Rights Reserved</p>
+        <div id="footer-links">
+            <ul>
+                <li><a href="/privacypolicy">Privacy Policy</a></li>
+                <li><a href="/newstaff">New Staff</a></li>
+                <li><a href="/sitemap">Sitemap</a></li>
+            </ul>
+        </div>
+    </div>
+</footer>
+
+<style>
+
+footer {
+    overflow: hidden;
+    background-color: #662D91;
+    height: 4rem;
+    padding: 1rem;
+    bottom: 0;
+    z-index: 50;
+}
+
+.footer-content {
+    max-width: 1200px;
+    margin: auto;
+    color: #FFF;
+    font-size: 1.2rem;
+    display: flex;
+    justify-content: space-between;
+}
+
+footer #footer-links {
+    margin-top: -1.3rem;
+}
+
+#footer-links ul {
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: flex-end;
+    align-items: flex-end;
+    list-style: none;
+}
+
+#footer-links ul li {
+    margin-top: 0.2rem;
+}
+
+#footer-links a{
+    color: #FFF;
+    text-decoration: none;
+}
+
+
+</style>

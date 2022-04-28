@@ -1,11 +1,12 @@
 ---
 import MainLayout from '../layouts/MainLayout.astro'
 // Component Imports
-//import Button from '../components/Button/Button.astro'
-//import Nav from '../components/Nav/Navbar.svelte'
-import Nav from '../components/Nav/SecondNavbar.svelte'
-// You can import components from any supported Framework here!
-let title = "Lucky XP Marketing"
+import Button from '../components/Button/Button.astro'
+//import Nav from '../components/Nav/ResponsiveNavbar.astro'
+import Nav from '../components/Nav/Navbar.svelte'
+import Card from '../components/Card/Cards.astro'
+import Footer from '../components/Footer/Footer.astro'
+let title = "Lucky XP Marketing - Home"
 ---
 
 <style>
@@ -26,6 +27,7 @@ body {
 	display: block;
 	width: 100%;
 	height: auto;
+	overflow: hidden;
 }
 
 .gradient,
@@ -90,16 +92,36 @@ body {
 .desc {
 	color: #440b70;
 	font-size: 1.5rem;
-	margin-top: 2rem;
+	margin-top: -1rem;
 	opacity: 0.7;
 	text-transform: uppercase;
 	text-align: center;
 }
 
+@media only screen and (max-width: 800px) {
+  .desc {
+	  display: none;
+  }
+
+  .title {
+
+  }
+
+  .subtitle{
+	  
+  }
+
+body{
+	background: rgb(102,45,145);
+	background: linear-gradient(0deg, rgba(102,45,145,1) 0%, rgba(255,255,255,1) 56%, rgba(255,255,255,1) 100%);
+}
+
+}
+
 </style>
 
 <MainLayout title={title}>
-	<Nav></Nav>
+	<Nav client:load/>
 
 	<header class="hero">
 		<img class="img" width="1600" height="900" src="./assets/LuckyXPHeroImage.jpeg" alt="Lucky XP Street Team at MambaCon">
@@ -108,12 +130,16 @@ body {
 			<div class="overlay">
 				<h1 class="title"> Lucky XP </h1>
 				<span class="subtitle"> Marketing and Promotions</span>
-				<div>
-					<button type="button" class="button">See How</button>
-					<button type="button" class="button">Contact Us</button>
-				</div>
 				<p class="desc">Superior Event Staffing for the <br> Experiential Marketing World since 2002</p>
+				<div>
+					<button onclick="window.location.href = '/#about';" type="button" class="button">See How</button>
+					<button onclick="window.location.href = '/#about';" type="button" class="button">Contact Us</button>
+				</div>
 			</div>
 	</header>
+
+	<Card />
+
+	<Footer />
 
 </MainLayout>

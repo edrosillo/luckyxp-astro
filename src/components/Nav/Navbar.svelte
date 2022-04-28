@@ -1,86 +1,3 @@
-<nav id="nav" class="navbar">
-    <div class="inner container-fluid">
-        <a class="navbarLogo" href="#home"> 
-            <img src="/assets/LuckyXP_LOGO.png" alt="Lucky XP Logo" width=247px height=64px> 
-        </a>
-        <div class="navbarMenu">
-          <ul>
-            <li>
-            <a href="/about">About</a>
-            </li>
-            <li>
-            <a href="/contact">Contact Us</a>
-            </li>
-            <li>
-            <a href="/team">Our Team</a>
-            </li>
-            <li>
-            <a href="/new_staff">New Staff</a>
-            </li>
-          </ul>
-        </div>
-    </div>
-</nav>
-
-<style>
-
-nav {
-overflow: hidden;
-background-color: rgb(255, 255, 255);
-height: 4rem;
-padding: 1rem;
-position: sticky;
-top: 0;
-z-index: 10;
-}
-
-.container-fluid {
-    display: flex;
-    align-items: center;
-}
-
-.navbarLogo {
-    display: inline-block;
-}
-
-.navbarMenu{
-  margin-left: 3rem;
-}
-
-ul {
-  list-style: none;
-  margin: 0;
-  padding: 0;
-  float: right;
-}
-
-.navbarMenu li {
-  display: inline-block;
-}
-
-
-/* Style the links inside the navigation bar */
-.navbarMenu a {
-  color: #662D91;
-  padding: 0 1rem;
-  text-decoration: none;
-  font-size: 1.3rem;
-  text-transform: uppercase;
-  float: right;
-  text-align: left;
-}
-
-/* Change the color of links on hover */
-.navbarMenu a:hover {
-  color: #7F68CA;
-}
-
-</style>
-
-
-
-
-<!--
 <script>
   import { onMount } from "svelte";
 
@@ -89,10 +6,11 @@ ul {
 
   // List of navigation items
   const navItems = [
-    { label: "HOME", href: "#" },
-    { label: "ABOUT US", href: "#" },
-    { label: "CONTACT US", href: "#" },
-    { label: "OUR TEAM", href: "#" }
+    { label: "About", href: "#" },
+    { label: "Contact Us", href: "#" },
+    { label: "Our Team", href: "#" },
+    { label: "New Staff", href: "#" },
+    { label: "Request a Quote", href: "#" }
   ];
 
   // Mobile menu click event handler
@@ -108,23 +26,20 @@ ul {
 
   // Attach media query listener on mount hook
   onMount(() => {
-    const mediaListener = window.matchMedia("(max-width: 767px)");
-
+    const mediaListener = window.matchMedia("(max-width: 800px)");
     mediaListener.addListener(mediaQueryHandler);
   });
 </script>
 
 <nav>
   <div class="inner">
-    <img src="/assets/LuckXP_LOGO.png" alt="Lucky XP Logo" width="100" height="55">
     <div on:click={handleMobileIconClick} class={`mobile-icon${showMobileMenu ? ' active' : ''}`}>
       <div class="middle-line"></div>
     </div>
+    <a class="navbarLogo" href="#home"> <img src="/assets/LuckyXP_LOGO.png" alt="Lucky XP Logo"> </a>
     <ul class={`navbar-list${showMobileMenu ? ' mobile' : ''}`}>
       {#each navItems as item}
-        <li>
-          <a href={item.href}>{item.label}</a>
-        </li>
+        <li><a href={item.href}>{item.label}</a></li>
       {/each}
     </ul>
   </div>
@@ -134,11 +49,11 @@ ul {
   nav {
     background-color: rgb(255, 255, 255);
     font-family: "Helvetica Neue", "Helvetica", "Arial", sans-serif;
-    height: 60px;
+    height: 6rem;
   }
 
   .inner {
-    max-width: 980px;
+    max-width: 1200px;
     padding-left: 20px;
     padding-right: 20px;
     margin: auto;
@@ -151,8 +66,14 @@ ul {
   .mobile-icon {
     width: 25px;
     height: 14px;
-    position: relative;
+    position: absolute;
+    right: 2rem;
     cursor: pointer;
+  }
+
+  .navbarLogo img {
+  width: 247px;
+  height: 64px;
   }
 
   .mobile-icon:after,
@@ -162,7 +83,7 @@ ul {
     position: absolute;
     width: 100%;
     height: 2px;
-    background-color: #fff;
+    background-color: #662D91;
     transition: all 0.4s;
     transform-origin: center;
   }
@@ -216,12 +137,13 @@ ul {
   }
 
   .navbar-list.mobile {
-    background-color: rgba(0, 0, 0, 0.8);
+    background-color: rgba(102, 45, 145, 0.8);
     position: fixed;
     display: block;
-    height: calc(100% - 45px);
+    height: calc(100% - 6rem);
     bottom: 0;
     left: 0;
+    z-index: 20;
   }
 
   .navbar-list li {
@@ -235,22 +157,30 @@ ul {
     bottom: 0;
     left: 0;
     width: 100%;
-    height: 1px;
-    background-color: #ffffff;
+    height: 0px;
+    background-color: #49007d;
   }
 
   .navbar-list a {
-    color: #662d91;
+    color: #ffffff;
     text-decoration: none;
-    font-weight: 400;
     display: flex;
     height: 45px;
     align-items: center;
     padding: 0 10px;
-    font-size: 18px;
+    font-size: 1rem;
+    font-weight: 500;
   }
 
-  @media only screen and (min-width: 767px) {
+  @media only screen and (min-width: 800px) {
+
+    nav {
+      position: sticky;
+      top: 0;
+      z-index: 50;
+      box-shadow: 0px 6px 17px -9px rgba(0,0,0,0.3);
+    }
+
     .mobile-icon {
       display: none;
     }
@@ -258,11 +188,17 @@ ul {
     .navbar-list {
       display: flex;
       padding: 0;
+      margin-left: 6rem;
+    }
+
+    .navbar-list li {
+    text-align: center;
     }
 
     .navbar-list a {
       display: inline-flex;
+      font-size: 1.3rem;
+      color: #662d91;
     }
   }
 </style>
--->
