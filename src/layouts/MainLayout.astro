@@ -1,6 +1,7 @@
 ---
-
 import MainHead from "../components/MainHead.astro"
+import Nav from "../components/Nav/Navbar.svelte"
+import Footer from "../components/Footer/Footer.astro"
 
 let {title} = Astro.props;
 
@@ -8,11 +9,19 @@ let {title} = Astro.props;
 <html lang="en">
 	<head>
         <MainHead title={title} />
-    <style>
-    
-    </style>
+	<style>
+		body {
+		margin: 0;
+		padding: 0;
+		font-family: Arial, Helvetica, sans-serif;
+		scroll-behavior: smooth;
+		}
+
+	</style>
 	</head>
 	<body>
+		<Nav></Nav>
 		<slot />
+		<Footer></Footer>
 	</body>
 </html>

@@ -19,7 +19,7 @@
         <li><a href="/contact">Contact Us</a></li>
         <li><a href="/team">Our Team</a></li>
         <li><a href="/new_staff">New Staff</a></li>
-        <li id="quote"><a href="/#quote">Request a Quote</a></li>
+        <li id="quote"><a href="/quote">Request a Quote</a></li>
       </ul>
     </div>
   </div>

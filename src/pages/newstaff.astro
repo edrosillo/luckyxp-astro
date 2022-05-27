@@ -1,0 +1,34 @@
+---
+import MainLayout from '../layouts/MainLayout.astro'
+
+---
+
+<MainLayout>
+
+<div id="container">
+    <iframe seamless class="airtable-embed" src="https://airtable.com/embed/shr9TIvrUolx2NNH8?backgroundColor=teal" style="background: transparent; ">
+    </iframe>
+</div>
+
+
+</MainLayout>
+
+<style>
+
+#container {
+    min-height: 100vh;
+    max-width: 1150px;
+    margin: 0 auto;
+    height: calc(100%);
+}
+
+iframe {
+    margin: 0;
+    padding: 0;
+    border: none;
+    width: 100%;
+    height: 100vh;
+}
+
+
+</style>

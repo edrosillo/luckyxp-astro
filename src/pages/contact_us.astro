@@ -1,0 +1,175 @@
+---
+import MainLayout from '../layouts/MainLayout.astro'
+
+let title = "Contact Us - Lucky XP Marketing"
+---
+
+<MainLayout title={title}>
+
+<section class="section-contact">
+    <div class="container">
+
+        <h1>Contact the team!</h1>
+
+		<p>Fill out the form below to get in touch with one of our team members. We will try to get back to you within 48 hours. 
+        <br>If we do not reply within that time please feel free to use the form again.</p>
+
+        <form action="https://formsubmit.co/info@lucky415.com" method="POST">
+
+            <div class="form-group">
+                <label for="firstname">First Name*</label>
+                <input type="text" name="firstname" id="firstname" required class="form-element" placeholder="Name" />
+            </div>
+            <div class="form-group">
+                <label for="lastname">Last Name*</label>
+                <input type="text" name="lastname" id="lastname" required class="form-element" placeholder="Last Name" />
+            </div>
+            <div class="form-group">
+                <label for="email">Email Address*</label>
+                <input type="email" name="email" id="email" required class="form-element" placeholder="examplee@example.com" />
+            </div>
+            <div class="form-group">
+                <label for="company">Company</label>
+                <input type="text" name="company" id="company" class="form-element" placeholder="Company Name" />
+            </div>
+            <div class="form-group full">
+                <label for="message">What are you looking for?</label>
+                <textarea name="message" id="message" class="form-element" placeholder="Let us know more about what you are looking for."></textarea>
+            </div>
+            <div class="submit-group">
+                <input type="submit" value="SEND MESSAGE" />
+            </div>
+        </form>
+    </div>
+</section>
+
+
+</MainLayout>
+
+<style>
+
+.section-contact{
+    min-height:100vh;
+    padding-top:2rem;
+    padding-bottom:1rem;
+    /*background-image:linear-gradient(175deg, #EEE 50%, #9B75D7 50%,#662d91)*/
+    }
+
+.section-contact .container {
+    max-width:1150px;
+    margin:0 auto;
+    padding-left:2rem;
+    padding-right:2rem;
+    }
+
+@media (min-width: 768px){
+   .section-contact .container {
+        padding-left:4rem;
+        padding-right:4rem;
+        }
+    }
+
+@media (min-width: 1024px) {
+    .section-contact .container {
+        padding-left:8rem;
+        padding-right:8rem;
+        }
+    }
+    
+    .section-contact .container h1 {
+        color:#662d91;
+        font-size:2.4rem;
+        text-transform:uppercase;
+        text-align:center;
+        margin-bottom:1rem;
+        }
+    
+    .section-contact .container p {
+        color:#662d91;
+        font-size:1.3rem;
+        margin-bottom:2rem
+        }
+    
+    .section-contact .container form {
+        display:-ms-grid;
+        display:grid;
+        -ms-grid-columns:auto;
+        grid-template-columns:auto;
+        grid-gap:1.5rem;
+        background-color:#FFF;
+        padding:4rem;
+        border-radius:16px;
+        -webkit-box-shadow:0px 6px 12px rgba(0,0,0,0.2);
+        box-shadow:0px 6px 12px rgba(0,0,0,0.2)
+        }
+        
+    @media (min-width: 768px){
+        .section-contact .container form {
+            grid-template-columns:repeat(2, 1fr);
+            }
+        }
+
+    .section-contact .container form .form-group .full{
+        grid-column:auto;
+    }
+    
+    .section-contact .container form .form-group label {
+        display:block;
+        margin-bottom:5px;
+        color:#888;
+        font-size:1.2rem;
+    }
+        
+    .section-contact .container form .form-group .form-element {
+        -webkit-appearance:none;
+        -moz-appearance:none;
+        appearance:none;
+        outline:none;
+        border:none;
+        display:block;
+        width:95%;
+        border-radius:8px;
+        padding:12px 16px;
+        background-color:#F3F3F3;
+        -webkit-transition:0.4s;
+        transition:0.4s
+    }
+            
+    .section-contact .container form .form-group .form-element:focus {
+        -webkit-box-shadow:0px 0px 6px rgba(0,0,0,0.2);
+        box-shadow:0px 0px 6px rgba(0,0,0,0.2);
+        background-color:#FFF
+    }
+        
+    .section-contact .container form .form-group textarea {
+        resize:none;
+        min-height:100px
+        }
+            
+    .section-contact .container form .submit-group{
+        grid-column:1 / -1;
+        text-align:right;
+    }
+        
+    .section-contact .container form .submit-group input[type="submit"]{
+        -webkit-appearance:none;
+        -moz-appearance:none;
+        appearance:none;
+        border:none;
+        outline:none;
+        background:none;
+        padding:12px 16px;
+        background-color:#662d91;
+        border-radius:8px;
+        color:#FFF;
+        cursor:pointer;
+        -webkit-transition:0.4s;
+        transition:0.4s
+    }
+            
+    .section-contact .container form .submit-group input[type="submit"]:hover{
+        background-color:#9B75D7
+    }
+
+
+</style>

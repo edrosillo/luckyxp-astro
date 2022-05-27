@@ -2,7 +2,6 @@
 import MainLayout from '../layouts/MainLayout.astro'
 // Component Imports
 import Button from '../components/Button/Button.astro'
-//import Nav from '../components/Nav/ResponsiveNavbar.astro'
 import Nav from '../components/Nav/Navbar.svelte'
 import Card from '../components/Card/Cards.astro'
 import Footer from '../components/Footer/Footer.astro'
@@ -121,7 +120,6 @@ body{
 </style>
 
 <MainLayout title={title}>
-	<Nav client:load/>
 
 	<header class="hero">
 		<img class="img" width="1600" height="900" src="./assets/LuckyXPHeroImage.jpeg" alt="Lucky XP Street Team at MambaCon">
@@ -132,14 +130,12 @@ body{
 				<span class="subtitle"> Marketing and Promotions</span>
 				<p class="desc">Superior Event Staffing for the <br> Experiential Marketing World since 2002</p>
 				<div>
-					<button onclick="window.location.href = '/#about';" type="button" class="button">See How</button>
-					<button onclick="window.location.href = '/#about';" type="button" class="button">Contact Us</button>
+					<button onclick="window.location.href = '/about';" type="button" class="button">See How</button>
+					<button onclick="window.location.href = '/contact';" type="button" class="button">Contact Us</button>
 				</div>
 			</div>
 	</header>
 
 	<Card />
-
-	<Footer />
 
 </MainLayout>

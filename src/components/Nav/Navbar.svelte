@@ -6,11 +6,11 @@
 
   // List of navigation items
   const navItems = [
-    { label: "About", href: "#" },
-    { label: "Contact Us", href: "#" },
-    { label: "Our Team", href: "#" },
-    { label: "New Staff", href: "#" },
-    { label: "Request a Quote", href: "#" }
+    { label: "About Us", href: "/about" },
+    { label: "Contact Us", href: "/contact_us" },
+    { label: "Our Team", href: "/team" },
+    { label: "New Staff", href: "/newstaff" },
+    { label: "Request a Quote", href: "/quote" }
   ];
 
   // Mobile menu click event handler
@@ -36,7 +36,7 @@
     <div on:click={handleMobileIconClick} class={`mobile-icon${showMobileMenu ? ' active' : ''}`}>
       <div class="middle-line"></div>
     </div>
-    <a class="navbarLogo" href="#home"> <img src="/assets/LuckyXP_LOGO.png" alt="Lucky XP Logo"> </a>
+    <a class="navbarLogo" href="/#"> <img src="/assets/LuckyXP_LOGO.png" alt="Lucky XP Logo"> </a>
     <ul class={`navbar-list${showMobileMenu ? ' mobile' : ''}`}>
       {#each navItems as item}
         <li><a href={item.href}>{item.label}</a></li>
