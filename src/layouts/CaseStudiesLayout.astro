@@ -3,13 +3,18 @@ import MainHead from "../components/MainHead.astro"
 import Nav from "../components/Nav/Navbar.svelte"
 import Footer from "../components/Footer/Footer.astro"
 
-let {title} = Astro.props;
+let { content } = Astro.props;
+let { title, description, publishDate, author } = content;
 
 ---
 
-<html lang="en">
+<html lang={content.lang || "en"}>
 	<head>
-        <MainHead title={title} />
+        <MainHead 
+		title={title}
+		desciption = {description}
+		publishDate = {publishDate}
+		author = {author} />
     <style>
 		html,
 		body {
@@ -32,8 +37,10 @@ let {title} = Astro.props;
 		}
 
 		:global(img){
+			max-width: 380px;
 			width: auto;
-			height: 250px;
+			max-height: 380px;
+			height: auto;
 		}
 
 		:global(p) {
@@ -41,9 +48,19 @@ let {title} = Astro.props;
 			line-height: 2rem;
 		}
 
+		:global(a) {
+			text-decoration: none;
+			color: #440b70;
+		}
+
 		@media only screen and (max-width: 800px) {
 			article {
 				padding: 0 2rem;
+			}
+
+			:global(img){
+				max-width: 90vw;
+				max-height: 300px;
 			}
   		}
 

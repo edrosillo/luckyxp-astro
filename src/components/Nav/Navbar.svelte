@@ -50,6 +50,7 @@
     background-color: rgb(255, 255, 255);
     font-family: "Helvetica Neue", "Helvetica", "Arial", sans-serif;
     height: 6rem;
+    box-shadow: 0px 6px 17px -9px rgba(0,0,0,0.3);
   }
 
   .inner {
@@ -178,7 +179,6 @@
       position: sticky;
       top: 0;
       z-index: 50;
-      box-shadow: 0px 6px 17px -9px rgba(0,0,0,0.3);
     }
 
     .mobile-icon {
