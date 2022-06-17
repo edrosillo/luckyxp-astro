@@ -15,6 +15,32 @@ let { title, description, publishDate, author } = content;
 		desciption = {description}
 		publishDate = {publishDate}
 		author = {author} />
+	</head>
+	<body>
+		<Nav></Nav>
+		<div class="case-nav">
+			<ul class="case-options">
+				<a href=""><li>Street Teams</li></a>
+				<a href=""><li>Brand Ambassadors</li></a>
+				<a href=""><li>Comic-Con</li></a>
+				<a href=""><li>Event Staff</li></a>
+				<a href=""><li>Retail Demos</li></a>
+				<a href=""><li>Costume Characters</li></a>
+				<a href=""><li>Special Events</li></a>
+				<a href=""><li>Postcards-Direct Mail</li></a>
+			</ul>
+		</div>
+		<h1></h1>
+		<article>
+			<slot />
+			<div class="container">
+				<a href="/contact_us"><button class="button">Contact Us</button></a>
+			</div>
+		</article>
+		<Footer></Footer>
+	</body>
+</html>
+
     <style>
 		html,
 		body {
@@ -24,11 +50,80 @@ let { title, description, publishDate, author } = content;
 		scroll-behavior: smooth;
 		}
 
+		.case-nav {
+			height: 4.3rem;
+			background-color: #f0f0f0;
+		}
+
+		.case-options {
+			max-width: 1160px;
+			margin: 0 auto;
+			padding-top: 1rem;
+			padding-left: 0;
+			display: grid;
+			grid-template-columns: repeat(8, 1fr);
+			align-items: center;
+  			justify-items: center;
+			list-style: none;
+			font-size: 1rem;
+		}
+
+		.case-options li {
+			padding: 0 1rem;
+			text-align: center;
+		}
+
 		article {
 			min-height:80vh;
 			margin: 0 auto;
 			max-width: 1160px;
 			padding: 0 3rem;
+		}
+
+		.container {
+			display: flex;
+			align-content: center;
+			justify-content: center;
+		}
+
+		button {
+			background-color: #662D91;
+			cursor: pointer;
+			color: #FFFFFF;
+			padding: 0.6rem 0;
+			font-size: 1.5rem;
+			text-align: center;
+			border-radius: 10px;
+			margin: 2rem 0;
+			border: none;
+			width: 12rem;
+  			transition: all 0.3s;
+		}
+
+		button{
+			cursor: pointer;
+			display: inline-block;
+			position: relative;
+			transition: 0.3s;
+		}
+
+		button:after {
+			content: '»';
+			position: absolute;
+			opacity: 0;  
+			top: 0.5rem;
+			right: -50px;
+			transition: 0.3s;
+		}
+
+		button:hover{
+			padding-right: 24px;
+			padding-left:8px;
+		}
+
+		button:hover:after {
+			opacity: 1;
+			right: 10px;
 		}
 
 		:global(h1) {
@@ -37,10 +132,10 @@ let { title, description, publishDate, author } = content;
 		}
 
 		:global(img){
-			max-width: 380px;
 			width: auto;
 			max-height: 380px;
 			height: auto;
+			object-fit: contain;
 		}
 
 		:global(p) {
@@ -55,6 +150,7 @@ let { title, description, publishDate, author } = content;
 
 		@media only screen and (max-width: 800px) {
 			article {
+				margin-top: 3rem;
 				padding: 0 2rem;
 			}
 
@@ -62,16 +158,20 @@ let { title, description, publishDate, author } = content;
 				max-width: 90vw;
 				max-height: 300px;
 			}
+
+			.case-nav {
+				height: 7rem;
+			}
+
+			.case-options {
+				grid-template-columns: repeat(4, 1fr);
+				gap: 0.8rem;
+				padding-top: 0.6rem;
+			}
+
+			.case-options li {
+			padding: 0 0.5rem;
+			}
   		}
 
     </style>
-	</head>
-	<body>
-		<Nav></Nav>
-		<h1></h1>
-		<article>
-			<slot />
-		</article>
-		<Footer></Footer>
-	</body>
-</html>
