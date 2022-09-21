@@ -1,4 +1,4 @@
 User-agent: *
 Disallow: 
 Disallow: /cgi-bin/
-Sitemap: http://luckyxp.com/sitemap
+Sitemap: http://luckyxp.com/sitemap.xml

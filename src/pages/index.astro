@@ -1,138 +1,186 @@
 ---
-import MainLayout from '../layouts/MainLayout.astro'
+import MainLayout from "../layouts/MainLayout.astro";
 // Component Imports
-import Card from '../components/Card/Cards.astro'
-let title = "Lucky XP Marketing - Home"
+import Cards from "../components/Card/Cards.astro";
+import Services from "../components/Card/Services.astro";
+let title = "Home - Lucky XP Marketing";
 ---
 
 <style>
-html,
-body {
-  margin: 0;
-  padding: 0;
-  font-family: Arial, Helvetica, sans-serif;
-  scroll-behavior: smooth;
-}
+  html,
+  body {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, Helvetica, sans-serif;
+    scroll-behavior: smooth;
+  }
 
-.hero{
-	position: relative;
-	overflow: hidden;
-}
+  .hero {
+    position: relative;
+    overflow: hidden;
+  }
 
-.img {
-	display: block;
-	width: 100%;
-	height: auto;
-	overflow: hidden;
-}
+  .img {
+    display: block;
+    width: 100%;
+    height: auto;
+    overflow: hidden;
+  }
 
-.gradient,
-.gradient2 {
-	background-image: url('/assets/mesh-gradient.jpg');
-	background-size: cover;
-	pointer-events: none;
-	mix-blend-mode: screen;
-	width: 100%;
-	height: 100%;
-	position: absolute;
-	top: 0;
-	left: 0;
-	z-index: 2;
-}
+  .gradient,
+  .gradient2 {
+    background-image: url("/assets/mesh-gradient.jpg");
+    background-size: cover;
+    pointer-events: none;
+    mix-blend-mode: screen;
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 2;
+  }
 
-.gradient2 {
-	mix-blend-mode: multiply;
-	background-size: cover;
-}
+  .gradient2 {
+    mix-blend-mode: multiply;
+    background-size: cover;
+  }
 
-.overlay {
-	position: absolute;
-	top: 0;
-	left: 0;
-	width: 100%;
-	height: 100%;
-	z-index: 10;
-	display: flex;
-	flex-direction: column;
-	align-items: center;
-	justify-content: center;
-}
-
-
-.title {
-	font-weight: 900;
-	font-size: 6rem;
-	opacity: 0.60;
-	color: #440b70;
-}
-
-.subtitle {
-	font-weight: 400;
-	font-size: 2.25rem;
-	color: #440b70;
-	opacity: 0.8;
-	margin-top: -4.2rem;
-	margin-bottom: 2rem;
-}
-
-.button {
-	background-color: rgba(68, 11, 112, 0.8);
-	color: #FFFFFF;
-	padding: 0.6rem 2rem;
-	font-size: 1rem;
-	border-radius: 10px;
-	margin: 0 0.8rem;
-	border: none;
-}
-
-.desc {
-	color: #440b70;
-	font-size: 1.5rem;
-	margin-top: -1rem;
-	opacity: 0.7;
-	text-transform: uppercase;
-	text-align: center;
-}
-
-@media only screen and (max-width: 800px) {
-  .desc {
-	  display: none;
+  .overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 10;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
   }
 
   .title {
-
+    font-weight: 900;
+    font-size: 6rem;
+    opacity: 0.6;
+    color: #440b70;
   }
 
-  .subtitle{
-	  
+  .text-focus-in {
+    -webkit-animation: text-focus-in 1s cubic-bezier(0.55, 0.085, 0.68, 0.53)
+      both;
+    animation: text-focus-in 1s cubic-bezier(0.55, 0.085, 0.68, 0.53) both;
   }
 
-body{
-	background: rgb(102,45,145);
-	background: linear-gradient(0deg, rgba(102,45,145,1) 0%, rgba(255,255,255,1) 56%, rgba(255,255,255,1) 100%);
-}
+  @-webkit-keyframes text-focus-in {
+    0% {
+      -webkit-filter: blur(12px);
+      filter: blur(12px);
+      opacity: 0;
+    }
+    100% {
+      -webkit-filter: blur(0px);
+      filter: blur(0px);
+      opacity: 1;
+    }
+  }
+  @keyframes text-focus-in {
+    0% {
+      -webkit-filter: blur(12px);
+      filter: blur(12px);
+      opacity: 0;
+    }
+    100% {
+      -webkit-filter: blur(0px);
+      filter: blur(0px);
+      opacity: 1;
+    }
+  }
 
-}
+  .subtitle {
+    font-weight: 400;
+    font-size: 2.25rem;
+    color: #440b70;
+    opacity: 0.8;
+    margin-top: -4.2rem;
+    margin-bottom: 2rem;
+  }
 
+  .button {
+    background-color: rgba(68, 11, 112, 0.8);
+    color: #ffffff;
+    padding: 0.6rem 2rem;
+    font-size: 1rem;
+    border-radius: 10px;
+    margin: 0 0.8rem;
+    border: none;
+  }
+
+  .desc {
+    color: #440b70;
+    font-size: 1.5rem;
+    margin-top: -1rem;
+    opacity: 0.7;
+    text-transform: uppercase;
+    text-align: center;
+  }
+
+  @media only screen and (max-width: 850px) {
+    .desc {
+      display: none;
+    }
+
+    .title {
+    }
+
+    .subtitle {
+    }
+
+    body {
+      background: rgb(102, 45, 145);
+      background: linear-gradient(
+        0deg,
+        rgba(102, 45, 145, 1) 0%,
+        rgba(255, 255, 255, 1) 56%,
+        rgba(255, 255, 255, 1) 100%
+      );
+    }
+  }
 </style>
 
 <MainLayout title={title}>
+  <header class="hero">
+    <img
+      class="img"
+      width="1600"
+      height="900"
+      src="./assets/LuckyXPHeroImage.jpeg"
+      alt="Lucky XP Street Team at MambaCon"
+    />
+    <div class="gradient"></div>
+    <div class="gradient2"></div>
+    <div class="overlay">
+      <h1 class="title">Lucky XP</h1>
+      <span class="subtitle"> Marketing and Promotions</span>
+      <p class="desc">
+        Superior Event Staffing for the <br /> Experiential Marketing World since
+        2002
+      </p>
+      <div>
+        <button
+          onclick="window.location.href = '/about';"
+          type="button"
+          class="button">See How</button
+        >
+        <button
+          onclick="window.location.href = '/contact';"
+          type="button"
+          class="button">Contact Us</button
+        >
+      </div>
+    </div>
+  </header>
 
-	<header class="hero">
-		<img class="img" width="1600" height="900" src="./assets/LuckyXPHeroImage.jpeg" alt="Lucky XP Street Team at MambaCon">
-			<div class="gradient"></div>
-			<div class="gradient2"></div>
-			<div class="overlay">
-				<h1 class="title"> Lucky XP </h1>
-				<span class="subtitle"> Marketing and Promotions</span>
-				<p class="desc">Superior Event Staffing for the <br> Experiential Marketing World since 2002</p>
-				<div>
-					<button onclick="window.location.href = '/about';" type="button" class="button">See How</button>
-					<button onclick="window.location.href = '/contact';" type="button" class="button">Contact Us</button>
-				</div>
-			</div>
-	</header>
-
-	<Card />
-
+  <Cards />
+  <Services />
 </MainLayout>

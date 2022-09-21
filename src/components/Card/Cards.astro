@@ -7,7 +7,7 @@
             <img src="https://luckyxp.sirv.com/Cards%20Main/CardsMainImg1.jpeg?cx=150&cw=375&h=315&scale.option=fill" width="375" height="315" alt="" class="card-img-top">
         </div>
         <div class="card-body">
-            <a target="" href="https://share.themarketingarm.com/the-metaverse-whats-a-brand-to-do/" class="stretched-link" id="tile-113">
+            <a target="" href="" class="stretched-link" id="tile-113">
                 <h3 class="card-title"><span> WHAT WE DO </span></h3>
             </a>
             <p>Since 2002, Lucky Marketing has been providing event staffing solutions in all facets of the experiential marketing world around the United States and Canada. Find out how we can help make your event a success.</p>
@@ -18,7 +18,7 @@
             <img src="https://luckyxp.sirv.com/Cards%20Main/CardsMainImg2.png?cx=54&cy=27&cw=375&ch=315&h=400" width="375" height="315" alt="" class="card-img-top">
         </div>
         <div class="card-body">
-            <a target="" href="https://share.themarketingarm.com/the-metaverse-whats-a-brand-to-do/" class="stretched-link" id="tile-113">
+            <a target="" href="" class="stretched-link" id="tile-113">
                 <h3 class="card-title"><span> GET TO KNOW US </span></h3>
             </a>
             <p>We are event staffing professionals with a collective 30 years of experience in the field. Learn a bit more about us, or send us an email so we can get to know more about you and your project!</p>
@@ -26,10 +26,10 @@
     </div>
     <div class="card">
         <div class="card-img-wrapper">
-            <img src="https://luckyxp.sirv.com/Cards%20Main/CardsMainImg3.png?cx=77&cy=37&cw=375&ch=315&h=365" width="375" height="315" alt="" alt=""class="card-img-top">
+            <img src="https://luckyxp.sirv.com/Cards%20Main/CardsMainImg3.png?cw=375&ch=315&w=380&scale.option=fill" width="375" height="315" alt="" class="card-img-top">
         </div>
         <div class="card-body">
-            <a target="" href="https://share.themarketingarm.com/the-metaverse-whats-a-brand-to-do/" class="stretched-link" id="tile-113">
+            <a target="" href="" class="stretched-link" id="tile-113">
                 <h3 class="card-title"><span> CONTACT US </span></h3>
             </a>
             <p>We'd love to hear from you! <br> Contact us any time for a no obligation quote for your project. Our prices are surprisingly affordable and our customer service is superb!</p>
@@ -53,12 +53,13 @@
 }
 
 .card {
-    max-width: 380px;
+    width: 380px;
     text-align: center;
     margin: 0 0.8rem;
 }
 
 .card a {
+    color: #440b70;
     text-decoration: none;
 }
 
@@ -68,15 +69,12 @@
 
 .card img{
     width: 100%;
-    object-fit: contain;
-    border-style: solid;
-    border-radius: 3px;
-    border-color: #440b70;
+    object-fit: cover;
 }
 
 .card .card-body{
-    background: rgb(246,246,246);
-    background: linear-gradient(0deg, rgba(246,246,246,1) 0%, rgba(255,255,255,1) 100%);
+    background: rgb(240,221,255);
+    background: linear-gradient(0deg, rgba(240,221,255,1) 0%, rgba(255,255,255,1) 100%);
     padding: 2rem 1rem;
     margin-top: -0.2rem;
     height: 10rem;
@@ -87,7 +85,7 @@
     margin-top: 0.5rem;
 }
 
-@media only screen and (max-width: 800px) {
+@media only screen and (max-width: 850px) {
 
     .card-holder{
         flex-flow: column wrap;
@@ -95,16 +93,16 @@
 
     .card {
         margin: 1rem 0;
+        width: 85vw;
     }
+
+    .card img{
+        height: fit-content;
+        object-fit: cover;
 
 }
 
-
-
-@media only screen and (max-width: 775px) {
-  .card {
-      width: 100%;
-  }
 }
 
 </style>
+

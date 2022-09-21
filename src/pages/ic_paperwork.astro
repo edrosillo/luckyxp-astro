@@ -1,0 +1,68 @@
+---
+import MainLayout from '../layouts/MainLayout.astro'
+
+let title = "IC Paperwork - Lucky XP Marketing"
+---
+
+<MainLayout title={title}>
+    <div class="ic_main">
+        <h1>
+            1099/Indenpendent Contractor Paperwork
+        </h1>
+        <h2>
+            NEW STAFF ONLY
+        </h2>
+            <p>Docusign paperwork will be sent to you - PLEASE INFORM US IMMEDIATELY IF YOU DID NOT RECEIVE IT.</p>
+            <p>Payments process on Fridays, 2 weeks after your event ends and are typically received in 2-3 dates after processing. </p>
+        <h2>ONBOARDING INSTRUCTIONS</h2>
+            <p>You need to complete all of your paperwork on DocuSign prior to working your events.</p>
+            <p>Any questions can be answered by emailing <a href="mailto:accounting@lucky415.com">accounting@lucky415.com</a>.</p>
+        <h2>TIMESHEETS/INVOICE LINK</h2>
+        <p>After your event fill out the from below:</p>
+        <a href="https://airtable.com/shrPGnMlKP1EcQn2U"><p>Invoice Link</p></a>
+    </div>
+
+</MainLayout>
+
+<style>
+    .ic_main {
+        max-width: 75rem;
+        margin: 0 auto;
+        height: 80vh;
+    }
+
+    h1, h2, a {
+        color: #440b70;
+    }
+
+    h1 {
+        font-size: 2.8rem;
+    }
+
+    h2 {
+        text-decoration: underline;
+        margin-top: 3rem;
+    }
+
+    p {
+        font-size: 20px;
+        margin-top: -0.8rem;
+    }
+
+    a {
+        text-decoration: none;
+    }
+
+    a p {
+        font-size: 1.5rem;
+    }
+
+    @media only screen and (max-width: 800px) {
+        .ic_main {
+            margin: 0 1.5rem;
+        }
+
+    }
+
+
+</style>

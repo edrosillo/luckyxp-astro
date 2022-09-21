@@ -49,14 +49,16 @@
   nav {
     background-color: rgb(255, 255, 255);
     font-family: "Helvetica Neue", "Helvetica", "Arial", sans-serif;
-    height: 6rem;
+    height: 5rem;
     box-shadow: 0px 6px 17px -9px rgba(0,0,0,0.3);
   }
 
+  ul {
+    padding: 0;
+  }
+
   .inner {
-    max-width: 1200px;
-    padding-left: 20px;
-    padding-right: 20px;
+    max-width: 75rem;
     margin: auto;
     box-sizing: border-box;
     display: flex;
@@ -73,8 +75,9 @@
   }
 
   .navbarLogo img {
-  width: 247px;
-  height: 64px;
+  width: auto;
+  height: 3.5rem;
+  margin-left: 0.3rem;
   }
 
   .mobile-icon:after,
@@ -132,20 +135,22 @@
   .navbar-list {
     display: none;
     width: 100%;
-    justify-content: space-between;
     margin: 0;
-    padding: 0 40px;
   }
 
   .navbar-list.mobile {
-    background-color: rgba(102, 45, 145, 0.8);
+    background-color: rgba(102, 45, 145, 0.85);
     position: fixed;
-    display: block;
-    height: calc(100% - 6rem);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height: calc(100% - 5rem);
     bottom: 0;
     left: 0;
     z-index: 20;
+    padding: -40px;
   }
+
 
   .navbar-list li {
     list-style-type: none;
@@ -166,14 +171,14 @@
     color: #ffffff;
     text-decoration: none;
     display: flex;
-    height: 45px;
+    height: 4rem;
     align-items: center;
-    padding: 0 10px;
-    font-size: 1rem;
+    align-content: center;
+    font-size: 2rem;
     font-weight: 500;
   }
 
-  @media only screen and (min-width: 800px) {
+  @media only screen and (min-width: 850px) {
 
     nav {
       position: sticky;
@@ -186,9 +191,11 @@
     }
 
     .navbar-list {
+      justify-content: space-between;
       display: flex;
       padding: 0;
-      margin-left: 6rem;
+      margin-left: 7rem;
+      margin-right: 0.5rem;
     }
 
     .navbar-list li {
@@ -199,6 +206,22 @@
       display: inline-flex;
       font-size: 1.3rem;
       color: #662d91;
+      padding: 0 10px;
     }
   }
+
+@media only screen and (max-width: 850px){
+  .navbarLogo img {
+    margin-left: 1rem;
+  }
+
+}
+
+@media only screen and (max-width: 1200px) {
+  .navbarLogo img {
+  padding-left: 0.6rem;
+}
+
+ }
+
 </style>
