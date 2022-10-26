@@ -1,38 +1,198 @@
 ---
 ---
 
-<div class="card-container">
-  <div class="service">
-    <div class="service-img-reg"></div>
-    <div class="service-body"></div>
+<div class="title">
+  <h2><span>Our Services</span></h2>
+</div>
+<div class="card-holder">
+  <div class="card card-reg">
+    <a href="">
+      <div class="card-img-reg">
+        <figure>
+          <img
+            src="https://luckyxp.sirv.com/Services%20Cards%20Main/ServicesContactlessMarketing.png?cx=270&cw=1140&h=945"
+            alt=""
+          />
+        </figure>
+      </div>
+      <div class="card-body">
+        <h3 class="card-title"><span>CONTACTLESS MARKETING</span></h3>
+      </div>
+    </a>
   </div>
 
-  <div class="service">
-    <div class="service-img-long"></div>
-    <div class="service-body"></div>
+  <div class="card card-vertical">
+    <a href="">
+      <div class="card-img-long">
+        <figure>
+          <img
+            src="https://luckyxp.sirv.com/Services%20Cards%20Main/ServicesStreetTeamSignSpinner.jpg?cw=1140&h=945"
+            alt=""
+          />
+        </figure>
+      </div>
+      <div class="card-body">
+        <h3 class="card-title"><span>STREET TEAMS</span></h3>
+      </div>
+    </a>
   </div>
 
-  <div class="service">
-    <div class="service-img-reg"></div>
-    <div class="service-body"></div>
+  <div class="card card-reg">
+    <a href="">
+      <div class="card-img-reg">
+        <figure>
+          <img
+            src="https://luckyxp.sirv.com/Services%20Cards%20Main/ServicesBrandAmbassadors.jpg?cy=300&ch=945&w=1140"
+            alt=""
+          />
+        </figure>
+      </div>
+      <div class="card-body">
+        <h3 class="card-title"><span>BRAND AMBASSADORS</span></h3>
+      </div>
+    </a>
   </div>
 
-  <div class="service">
-    <div class="service-img-long"></div>
-    <div class="service-body"></div>
+  <div class="card card-vertical">
+    <a href="">
+      <div class="card-img-long">
+        <figure>
+          <img
+            src="https://luckyxp.sirv.com/Services%20Cards%20Main/ServicesMainExperiential.jpg?cx=60&cw=1140&h=945"
+            alt=""
+          />
+        </figure>
+      </div>
+      <div class="card-body">
+        <h3 class="card-title"><span>EXPERIENTIAL MARKETING</span></h3>
+      </div>
+    </a>
   </div>
 
-  <div class="service">
-    <div class="service-img-reg"></div>
-    <div class="service-body"></div>
+  <div class="card card-reg">
+    <a href="">
+      <div class="card-img-reg">
+        <figure>
+          <img
+            src="https://luckyxp.sirv.com/Services%20Cards%20Main/ServicesMainRetailDemo.jpg?cy=685&ch=945&w=1140"
+            alt=""
+          />
+        </figure>
+      </div>
+      <div class="card-body">
+        <h3 class="card-title"><span>RETAIL DEMOS</span></h3>
+      </div>
+    </a>
   </div>
 
-  <div class="service">
-    <div class="service-img-long"></div>
-    <div class="service-body"></div>
+  <div class="card card-vertical">
+    <a href="">
+      <div class="card-img-long">
+        <figure>
+          <img
+            src="https://luckyxp.sirv.com/Services%20Cards%20Main/ServicesMainCostumeCharacters.jpg?cy=230&ch=945&w=1140"
+            alt=""
+          />
+        </figure>
+      </div>
+      <div class="card-body">
+        <h3 class="card-title"><span> COSTUME CHARACTERS</span></h3>
+      </div>
+    </a>
   </div>
 </div>
 
 <style>
+  * {
+    padding: 0;
+    margin: 0;
+  }
 
+  .title {
+    text-align: center;
+  }
+
+  .title h2 {
+    font-size: 2.5rem;
+    margin: 3rem 1.3rem 0 1rem;
+    color: #ffffff;
+  }
+
+  h2 span {
+    background-color: #6b389d;
+    padding: 0 1rem;
+  }
+
+  .card-holder {
+    margin: 0 auto 2rem auto;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+    max-width: 1200px;
+    overflow: hidden;
+  }
+
+  .card-holder > * {
+    flex: 1 1 300px;
+  }
+
+  .card {
+    text-align: center;
+    width: 380px;
+    margin: 1rem 0.8rem;
+  }
+
+  .card a {
+    color: #ffffff;
+    text-decoration: none;
+  }
+
+  .card a :hover {
+    color: #c0a9d2;
+  }
+
+  .card img {
+    width: 100%;
+    object-fit: cover;
+  }
+
+  .card figure {
+    overflow: hidden;
+  }
+
+  .card figure img {
+    -webkit-transform: scale(1);
+    transform: scale(1);
+    -webkit-transition: 0.3s ease-in-out;
+    transition: 0.3s ease-in-out;
+  }
+  .card figure:hover img {
+    -webkit-transform: scale(1.2);
+    transform: scale(1.2);
+  }
+
+  .card .card-body {
+    background: #6b389d;
+    padding: 1.3rem 1rem;
+    margin-top: -0.8rem;
+    height: 1rem;
+    font-size: 1.2rem;
+  }
+
+  @media only screen and (max-width: 900px) {
+    .card-holder {
+      flex-flow: column wrap;
+    }
+
+    .card {
+      margin: 1rem 0;
+      width: 85vw;
+    }
+
+    .card img {
+      height: fit-content;
+      object-fit: cover;
+    }
+  }
 </style>

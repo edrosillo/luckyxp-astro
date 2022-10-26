@@ -6,10 +6,10 @@
 
   // List of navigation items
   const navItems = [
-    { label: "About Us", href: "/about" },
+    { label: "Services", href: "/services" },
+    { label: "About Us", href: "/team" },
+    { label: "Join the Team", href: "/newstaff" },
     { label: "Contact Us", href: "/contact_us" },
-    { label: "Our Team", href: "/team" },
-    { label: "New Staff", href: "/newstaff" },
     { label: "Request a Quote", href: "/quote" }
   ];
 
@@ -26,7 +26,7 @@
 
   // Attach media query listener on mount hook
   onMount(() => {
-    const mediaListener = window.matchMedia("(max-width: 800px)");
+    const mediaListener = window.matchMedia("(max-width: 850px)");
     mediaListener.addListener(mediaQueryHandler);
   });
 </script>
@@ -36,7 +36,7 @@
     <div on:click={handleMobileIconClick} class={`mobile-icon${showMobileMenu ? ' active' : ''}`}>
       <div class="middle-line"></div>
     </div>
-    <a class="navbarLogo" href="/#"> <img src="/assets/LuckyXP_LOGO.png" alt="Lucky XP Logo"> </a>
+    <a class="navbarLogo" href="/#"> <img src="src/images/LuckyXPLogo.png" alt="Lucky XP Logo"> </a>
     <ul class={`navbar-list${showMobileMenu ? ' mobile' : ''}`}>
       {#each navItems as item}
         <li><a href={item.href}>{item.label}</a></li>
@@ -178,7 +178,7 @@
     font-weight: 500;
   }
 
-  @media only screen and (min-width: 850px) {
+  @media only screen and (min-width: 900px) {
 
     nav {
       position: sticky;
@@ -188,6 +188,11 @@
 
     .mobile-icon {
       display: none;
+    }
+
+    .navbarLogo img {
+      max-height: 250px;
+      max-width: auto;
     }
 
     .navbar-list {

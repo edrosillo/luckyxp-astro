@@ -1,177 +1,176 @@
 ---
-import MainHead from "../components/MainHead.astro"
-import Nav from "../components/Nav/Navbar.svelte"
-import Footer from "../components/Footer/Footer.astro"
+import MainHead from "../components/MainHead.astro";
+import Nav from "../components/Nav/Navbar.svelte";
+import Footer from "../components/Footer/Footer.astro";
 
 let { content } = Astro.props;
 let { title, description, publishDate, author } = content;
-
 ---
 
 <html lang={content.lang || "en"}>
-	<head>
-        <MainHead 
-		title={title}
-		desciption = {description}
-		publishDate = {publishDate}
-		author = {author} />
-	</head>
-	<body>
-		<Nav></Nav>
-		<div class="case-nav">
-			<ul class="case-options">
-				<a href=""><li>Street Teams</li></a>
-				<a href=""><li>Brand Ambassadors</li></a>
-				<a href=""><li>Comic-Con</li></a>
-				<a href=""><li>Event Staff</li></a>
-				<a href=""><li>Retail Demos</li></a>
-				<a href=""><li>Costume Characters</li></a>
-				<a href=""><li>Special Events</li></a>
-				<a href=""><li>Postcards-Direct Mail</li></a>
-			</ul>
-		</div>
-		<h1></h1>
-		<article>
-			<slot />
-			<div class="container">
-				<a href="/contact_us"><button class="button">Contact Us</button></a>
-			</div>
-		</article>
-		<Footer></Footer>
-	</body>
-</html>
-
+  <head>
+    <MainHead
+      title={title}
+      desciption={description}
+      publishDate={publishDate}
+      author={author}
+    />
+  </head>
+  <body>
+    <Nav />
+    <div class="case-nav">
+      <ul class="case-options">
+        <a href=""><li>Street Teams</li></a>
+        <a href=""><li>Brand Ambassadors</li></a>
+        <a href=""><li>Comic-Con</li></a>
+        <a href=""><li>Event Staff</li></a>
+        <a href=""><li>Retail Demos</li></a>
+        <a href=""><li>Costume Characters</li></a>
+        <a href=""><li>Special Events</li></a>
+        <a href=""><li>Postcards-Direct Mail</li></a>
+      </ul>
+    </div>
+    <h1></h1>
+    <article>
+      <slot />
+      <div class="container">
+        <a href="/contact_us"><button class="button">Contact Us</button></a>
+      </div>
+    </article>
+    <Footer />
     <style>
-		html,
-		body {
-		margin: 0;
-		padding: 0;
-		font-family: Arial, Helvetica, sans-serif;
-		scroll-behavior: smooth;
-		}
+      html,
+      body {
+        margin: 0;
+        padding: 0;
+        font-family: Arial, Helvetica, sans-serif;
+        scroll-behavior: smooth;
+        background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='100' height='100' viewBox='0 0 100 100'%3E%3Cg fill-rule='evenodd'%3E%3Cg fill='%23662d91' fill-opacity='0.05'%3E%3Cpath opacity='.5' d='M96 95h4v1h-4v4h-1v-4h-9v4h-1v-4h-9v4h-1v-4h-9v4h-1v-4h-9v4h-1v-4h-9v4h-1v-4h-9v4h-1v-4h-9v4h-1v-4h-9v4h-1v-4H0v-1h15v-9H0v-1h15v-9H0v-1h15v-9H0v-1h15v-9H0v-1h15v-9H0v-1h15v-9H0v-1h15v-9H0v-1h15v-9H0v-1h15V0h1v15h9V0h1v15h9V0h1v15h9V0h1v15h9V0h1v15h9V0h1v15h9V0h1v15h9V0h1v15h9V0h1v15h4v1h-4v9h4v1h-4v9h4v1h-4v9h4v1h-4v9h4v1h-4v9h4v1h-4v9h4v1h-4v9h4v1h-4v9zm-1 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-9-10h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm9-10v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-9-10h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm9-10v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-9-10h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm9-10v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-9-10h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9z'/%3E%3Cpath d='M6 5V0H5v5H0v1h5v94h1V6h94V5H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+      }
 
-		.case-nav {
-			height: 4.3rem;
-			background-color: #f0f0f0;
-		}
+      .case-nav {
+        height: 4.3rem;
+        background-color: #f0f0f0;
+      }
 
-		.case-options {
-			max-width: 1160px;
-			margin: 0 auto;
-			padding-top: 1rem;
-			padding-left: 0;
-			display: grid;
-			grid-template-columns: repeat(8, 1fr);
-			align-items: center;
-  			justify-items: center;
-			list-style: none;
-			font-size: 1rem;
-		}
+      .case-options {
+        max-width: 1160px;
+        margin: 0 auto;
+        padding-top: 1rem;
+        padding-left: 0;
+        display: grid;
+        grid-template-columns: repeat(8, 1fr);
+        align-items: center;
+        justify-items: center;
+        list-style: none;
+        font-size: 1rem;
+      }
 
-		.case-options li {
-			padding: 0 1rem;
-			text-align: center;
-		}
+      .case-options li {
+        padding: 0 1rem;
+        text-align: center;
+      }
 
-		article {
-			min-height:80vh;
-			margin: 0 auto;
-			max-width: 1160px;
-			padding: 0 3rem;
-		}
+      article {
+        min-height: 80vh;
+        margin: 0 auto;
+        max-width: 1160px;
+        padding: 0 3rem;
+      }
 
-		.container {
-			display: flex;
-			align-content: center;
-			justify-content: center;
-		}
+      .container {
+        display: flex;
+        align-content: center;
+        justify-content: center;
+      }
 
-		button {
-			background-color: #662D91;
-			cursor: pointer;
-			color: #FFFFFF;
-			padding: 0.6rem 0;
-			font-size: 1.5rem;
-			text-align: center;
-			border-radius: 10px;
-			margin: 2rem 0;
-			border: none;
-			width: 12rem;
-  			transition: all 0.3s;
-		}
+      button {
+        background-color: #662d91;
+        cursor: pointer;
+        color: #ffffff;
+        padding: 0.6rem 0;
+        font-size: 1.5rem;
+        text-align: center;
+        border-radius: 10px;
+        margin: 2rem 0;
+        border: none;
+        width: 12rem;
+        transition: all 0.3s;
+      }
 
-		button{
-			cursor: pointer;
-			display: inline-block;
-			position: relative;
-			transition: 0.3s;
-		}
+      button {
+        cursor: pointer;
+        display: inline-block;
+        position: relative;
+        transition: 0.3s;
+      }
 
-		button:after {
-			content: '»';
-			position: absolute;
-			opacity: 0;  
-			top: 0.5rem;
-			right: -50px;
-			transition: 0.3s;
-		}
+      button:after {
+        content: "»";
+        position: absolute;
+        opacity: 0;
+        top: 0.5rem;
+        right: -50px;
+        transition: 0.3s;
+      }
 
-		button:hover{
-			padding-right: 24px;
-			padding-left:8px;
-		}
+      button:hover {
+        padding-right: 24px;
+        padding-left: 8px;
+      }
 
-		button:hover:after {
-			opacity: 1;
-			right: 10px;
-		}
+      button:hover:after {
+        opacity: 1;
+        right: 10px;
+      }
 
-		:global(h1) {
-			color: #440b70;
-			font-size: 2.5rem;
-		}
+      :global(h1) {
+        color: #440b70;
+        font-size: 2.5rem;
+      }
 
-		:global(img){
-			width: auto;
-			max-height: 380px;
-			height: auto;
-			object-fit: contain;
-		}
+      :global(img) {
+        width: auto;
+        max-height: 380px;
+        height: auto;
+        object-fit: contain;
+      }
 
-		:global(p) {
-			font-size: 1.3rem;
-			line-height: 2rem;
-		}
+      :global(p) {
+        font-size: 1.3rem;
+        line-height: 2rem;
+      }
 
-		:global(a) {
-			text-decoration: none;
-			color: #440b70;
-		}
+      :global(a) {
+        text-decoration: none;
+        color: #440b70;
+      }
 
-		@media only screen and (max-width: 800px) {
-			article {
-				margin-top: 3rem;
-				padding: 0 2rem;
-			}
+      @media only screen and (max-width: 800px) {
+        article {
+          margin-top: 3rem;
+          padding: 0 2rem;
+        }
 
-			:global(img){
-				max-width: 90vw;
-				max-height: 300px;
-			}
+        :global(img) {
+          max-width: 90vw;
+          max-height: 300px;
+        }
 
-			.case-nav {
-				height: 7rem;
-			}
+        .case-nav {
+          height: 7rem;
+        }
 
-			.case-options {
-				grid-template-columns: repeat(4, 1fr);
-				gap: 0.8rem;
-				padding-top: 0.6rem;
-			}
+        .case-options {
+          grid-template-columns: repeat(4, 1fr);
+          gap: 0.8rem;
+          padding-top: 0.6rem;
+        }
 
-			.case-options li {
-			padding: 0 0.5rem;
-			}
-  		}
-
+        .case-options li {
+          padding: 0 0.5rem;
+        }
+      }
     </style>
+  </body>
+</html>

@@ -6,6 +6,43 @@ import Services from "../components/Card/Services.astro";
 let title = "Home - Lucky XP Marketing";
 ---
 
+<MainLayout title={title}>
+  <header class="hero">
+    <img
+      class="img"
+      width="1600"
+      height="900"
+      src="./assets/LuckyXPHeroImage.jpeg"
+      alt="Lucky XP Street Team at MambaCon"
+    />
+    <div class="gradient"></div>
+    <div class="gradient2"></div>
+    <div class="overlay">
+      <h1 class="title">Lucky XP</h1>
+      <span class="subtitle"> Marketing and Promotions</span>
+      <p class="desc">
+        Superior Event Staffing for the <br /> Experiential Marketing World since
+        2002
+      </p>
+      <div>
+        <button
+          onclick="window.location.href = '/services';"
+          type="button"
+          class="button">Our Services</button
+        >
+        <button
+          onclick="window.location.href = '/contact_us';"
+          type="button"
+          class="button">Contact Us</button
+        >
+      </div>
+    </div>
+  </header>
+
+  <Cards />
+  <Services />
+</MainLayout>
+
 <style>
   html,
   body {
@@ -129,58 +166,5 @@ let title = "Home - Lucky XP Marketing";
     .desc {
       display: none;
     }
-
-    .title {
-    }
-
-    .subtitle {
-    }
-
-    body {
-      background: rgb(102, 45, 145);
-      background: linear-gradient(
-        0deg,
-        rgba(102, 45, 145, 1) 0%,
-        rgba(255, 255, 255, 1) 56%,
-        rgba(255, 255, 255, 1) 100%
-      );
-    }
   }
 </style>
-
-<MainLayout title={title}>
-  <header class="hero">
-    <img
-      class="img"
-      width="1600"
-      height="900"
-      src="./assets/LuckyXPHeroImage.jpeg"
-      alt="Lucky XP Street Team at MambaCon"
-    />
-    <div class="gradient"></div>
-    <div class="gradient2"></div>
-    <div class="overlay">
-      <h1 class="title">Lucky XP</h1>
-      <span class="subtitle"> Marketing and Promotions</span>
-      <p class="desc">
-        Superior Event Staffing for the <br /> Experiential Marketing World since
-        2002
-      </p>
-      <div>
-        <button
-          onclick="window.location.href = '/about';"
-          type="button"
-          class="button">See How</button
-        >
-        <button
-          onclick="window.location.href = '/contact';"
-          type="button"
-          class="button">Contact Us</button
-        >
-      </div>
-    </div>
-  </header>
-
-  <Cards />
-  <Services />
-</MainLayout>
