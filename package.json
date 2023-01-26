@@ -1,6 +1,6 @@
 {
   "name": "@luckyxp/homepage",
-  "version": "0.0.1",
+  "version": "0.9.1",
   "private": true,
   "scripts": {
     "dev": "astro dev",
@@ -9,11 +9,12 @@
     "preview": "astro preview"
   },
   "devDependencies": {
-    "@astrojs/svelte": "^1.0.0",
-    "astro": "^1.5.2",
-    "svelte": "^3.50.0"
+    "@astrojs/svelte": "^2.0.0",
+    "astro": "^2.0.1",
+    "svelte": "^3.55.0"
   },
   "dependencies": {
-    "@astrojs/sitemap": "^1.0.0"
+    "@astrojs/sitemap": "^1.0.0",
+    "@astrojs/tailwind": "^3.0.0"
   }
 }
