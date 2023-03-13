@@ -19,31 +19,40 @@
   // Media match query handler
   const mediaQueryHandler = e => {
     // Reset mobile state
-    if (!e.matches) {
-      showMobileMenu = false;
-    }
+    showMobileMenu = e.matches;
   };
 
   // Attach media query listener on mount hook
   onMount(() => {
-    const mediaListener = window.matchMedia("(max-width: 850px)");
-    mediaListener.addListener(mediaQueryHandler);
+    const mediaQuery = window.matchMedia("(max-width: 768px)");
+    showMobileMenu = mediaQuery.matches;
+    mediaQuery.addListener(mediaQueryHandler);
   });
 </script>
 
 <nav>
   <div class="inner">
-    <div on:click={handleMobileIconClick} class={`mobile-icon${showMobileMenu ? ' active' : ''}`}>
-      <div class="middle-line"></div>
-    </div>
-    <a class="navbarLogo" href="/#"> <img src="src/images/LuckyXPLogo.png" alt="Lucky XP Logo"> </a>
-    <ul class={`navbar-list${showMobileMenu ? ' mobile' : ''}`}>
-      {#each navItems as item}
-        <li><a href={item.href}>{item.label}</a></li>
-      {/each}
-    </ul>
+    <a class="navbarLogo" href="/#">
+      <img src="src/images/LuckyXPLogo.png" alt="Lucky XP Logo">
+    </a>
+    <!-- svelte-ignore a11y-click-events-have-key-events -->
+    <div class="mobile-icon {showMobileMenu ? 'active' : ''}" on:click={handleMobileIconClick}></div>
+    {#if showMobileMenu}
+      <ul class="navbar-list mobile">
+        {#each navItems as item}
+          <li><a href={item.href}>{item.label}</a></li>
+        {/each}
+      </ul>
+    {:else}
+      <ul class="navbar-list">
+        {#each navItems as item}
+          <li><a href={item.href}>{item.label}</a></li>
+        {/each}
+      </ul>
+    {/if}
   </div>
 </nav>
+
 
 <style>
   nav {
